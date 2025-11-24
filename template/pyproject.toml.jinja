@@ -2,7 +2,7 @@
 name = "{{ dist_name }}"
 description = "{{ short_description }}"
 readme = "README.md"
-requires-python = ">= 3.11"
+requires-python = ">= 3.13"
 license = { text = "Apache-2.0" }
 authors = [{ name = "{{ author_full_name }}", email = "{{ author_email }}" }]
 classifiers = [
@@ -53,7 +53,7 @@ show_missing = true
 
 
 [tool.pyright]
-pythonVersion = "3.11"
+pythonVersion = "3.13"
 typeCheckingMode = "standard"
 # Not all dependencies have type hints:
 reportMissingTypeStubs = false
@@ -71,7 +71,7 @@ filterwarnings = [
 
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py313"
 
 [tool.ruff.lint]
 select = ["ALL"]
@@ -107,9 +107,8 @@ ignore = [
 
 [tool.tox]
 env_list = [
-    "3.11",
-    "3.12",
     "3.13",
+    "3.14",
     "pyright",
     "ruff-check",
     "ruff-format",
