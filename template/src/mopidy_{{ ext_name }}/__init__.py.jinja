@@ -15,33 +15,38 @@ class Extension(ext.Extension):
     ext_name = "{{ ext_name }}"
     version = __version__
 
-    def get_default_config(self):
+    def get_default_config(self) -> str:
         return config.read(pathlib.Path(__file__).parent / "ext.conf")
 
-    def get_config_schema(self):
+    def get_config_schema(self) -> config.ConfigSchema:
         schema = super().get_config_schema()
         # TODO: Comment in and edit, or remove entirely
-        #schema["username"] = config.String()
-        #schema["password"] = config.Secret()
+        # schema["username"] = config.String()
+        # schema["password"] = config.Secret()
         return schema
 
-    def setup(self, registry):
+    def setup(self, registry: ext.Registry) -> None:
         # You will typically only implement one of the following things
-        # in a single extension.
+        # in a single extension. Keep the imports inside this method, so that
+        # this module can be imported without importing your dependencies.
 
-        # TODO: Edit or remove entirely
-        from .frontend import FoobarFrontend
-        registry.add("frontend", FoobarFrontend)
+        # TODO: Comment in and edit, or remove entirely
+        # from .frontend import FoobarFrontend  # noqa: PLC0415
+        #
+        # registry.add("frontend", FoobarFrontend)
 
-        # TODO: Edit or remove entirely
-        from .backend import FoobarBackend
-        registry.add("backend", FoobarBackend)
+        # TODO: Comment in and edit, or remove entirely
+        # from .backend import FoobarBackend  # noqa: PLC0415
+        #
+        # registry.add("backend", FoobarBackend)
 
-        # TODO: Edit or remove entirely
-        registry.add(
-            "http:static",
-            {
-                "name": self.ext_name,
-                "path": str(pathlib.Path(__file__).parent / "static"),
-            },
-        )
+        # TODO: Comment in and edit, or remove entirely
+        # registry.add(
+        #     "http:static",
+        #     {
+        #         "name": self.ext_name,
+        #         "path": str(pathlib.Path(__file__).parent / "static"),
+        #     },
+        # )
+
+        pass
