@@ -39,12 +39,12 @@ The template sets up a project with:
    [Copier](https://copier.readthedocs.io/) with this extension template:
 
    ```sh
-   uvx copier copy gh:mopidy/cookiecutter-mopidy-ext .
+   uvx copier copy gh:mopidy/mopidy-ext-template .
    ```
 
 3. Make your Mopidy extension do something. To learn more about creating Mopidy
    extensions, please read the docs on [extension
-   development](https://docs.mopidy.com/latest/extensiondev).
+   development](https://docs.mopidy.com/latest/guides/extensiondev/).
 
 4. Release the extension to [PyPI](https://pypi.org/) by following the
    instructions in the generated `README.md` file.
