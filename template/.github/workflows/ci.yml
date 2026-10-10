@@ -31,6 +31,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - name: "pytest (3.13-lowest)"
+            python: "3.13"
+            tox: "3.13-lowest"
           - name: "pytest (3.13)"
             python: "3.13"
             tox: "3.13"
